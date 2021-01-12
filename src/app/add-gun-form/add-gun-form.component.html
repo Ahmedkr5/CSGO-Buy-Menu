@@ -1,0 +1,47 @@
+<app-header></app-header>
+<br>
+<div class="container">
+  <div class="card bg-light">
+    <div class="row">
+      <div class="col-md-4">
+<form #addgunform = "ngForm">
+  ID: <input name = "ID" type = "number" [(ngModel)]="gun.id" #id = "ngModel" required pattern = "\d+"/>
+  <div *ngIf = "id.touched && id.invalid">
+    <div *ngIf = "id.errors?.required" class="text-danger" style="font-size: 12px">Ce champ est obligatoire!</div>
+    <div *ngIf = "id.value < 0" class="text-warning" style="font-size: 12px">ID doit être positive</div>
+  </div>
+  <br>
+  <br>
+  Name <input name = "Name" type = "text" [(ngModel)]="gun.name" #t = "ngModel" required/>
+  <div *ngIf = "t.touched && t.invalid"class="text-danger" style="font-size: 12px">Ce champ est obligatoire!</div>
+  <br>
+  <br>
+  Prix: <input name = "Prix" type = "number" [(ngModel)]="gun.prix" #p = "ngModel" required pattern = "\d+"/>
+  <div *ngIf = "p.touched && p.invalid" class="text-danger" style="font-size: 12px">
+    Ce champ est obligatoire!
+    <div *ngIf = "p.value < 0"class="text-warning" style="font-size: 12px" >Prix doit être positive</div>
+  </div>
+  <br>
+  <br>
+  Lien d'image: <input name = "IMG" type = "text" [(ngModel)]="gun.img" #img = "ngModel" required/>
+  <div *ngIf = "img.touched && img.invalid" class="text-danger"style="font-size: 12px">Ce champ est obligatoire!</div>
+  <br>
+  <br>
+  Clip: <input name = "Clip" type = "text" [(ngModel)]="gun.clip" #clip = "ngModel" required/>
+  <div *ngIf = "clip.touched && clip.invalid"><div class="invalid-feedback" class="text-danger" style="font-size: 12px">Ce champ est obligatoire!</div></div>
+  <div *ngIf = "clip.value < 0" class="text-warning" style="font-size: 12px">Clip doit être positive</div>
+  <br><br>
+  Country: <input name = "Country" type = "text" [(ngModel)]="gun.country" #cnt = "ngModel" required/>
+  <div *ngIf = "cnt.touched && cnt.invalid" class="text-danger" style="font-size: 12px">Ce champ est obligatoire!</div>
+  <br><br>
+  Description: <input name = "Description" type = "text"  [(ngModel)]="gun.Description" #dsc = "ngModel" required/>
+  <div *ngIf = "dsc.touched && dsc.invalid" class="text-danger"style="font-size: 12px">Ce champ est obligatoire!</div>
+  <br><br>
+  <button class="btn-success" style="font-size:20px;"[disabled] = "addgunform.invalid" (click) = "save()" [routerLink]="'/'">Save</button>
+</form>
+    </div>
+    <div class="col-md-8">
+    <img class=" img-fluid" src="../assets/images/guns.jpg">
+  </div>
+  </div></div>
+<app-footer></app-footer>

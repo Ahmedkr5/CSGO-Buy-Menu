@@ -1,0 +1,41 @@
+
+
+      <div class="image-flip" >
+        <div class="mainflip flip-0">
+          <div class="frontside">
+            <div class="card">
+              <div class="card-body text-center">
+                <p><img class=" img-fluid" src="{{ gun.img }}" alt="card image"></p>
+                <h4 class="card-title">{{ gun.name }}</h4>
+
+                <span class="card-detail-badge">${{ gun.prix }}</span>
+                <span class="card-detail-badge">Clip [{{ gun.clip }}]</span>
+                <span class="card-detail-badge">From {{ gun.country }}</span>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="backside">
+            <div class="card">
+              <div class="card-body text-center mt-4">
+                <h4 class="card-title">{{ gun.name }}</h4>
+                <p class="card-text">{{ gun.Description }}</p>
+                <ul class="list-inline">
+
+
+                  <li class="list-inline-item">
+                    <button class="btn-danger" (click) ="deleteGun(gun.id)">Delete</button>
+
+                  </li>
+                  <li class="list-inline-item">
+                    <button class="btn-primary" [routerLink]="['/modify',gun.id]" >Modify</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+

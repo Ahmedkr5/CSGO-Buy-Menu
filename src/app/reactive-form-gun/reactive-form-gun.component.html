@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="container">
+  <div class="card bg-light">
+    <div class="row">
+      <div class="col-md-4">
+<form [formGroup]="productform" (ngSubmit)="update()">
+  <div class="form-group" style="width: 900px">
+    <label>Name</label>
+    <input type="text" formControlName="name" name="namegun" class="form-control col-md-3" [(ngModel)]="guntoModify.name">
+    <div class="alert alert-danger" *ngIf="name.invalid">
+      <div *ngIf="name.errors.required">Name obligatoire</div>
+      <div *ngIf="name.errors.minlength"> min 3 </div>
+    </div>
+  </div>
+  <div class="form-group" style="width: 900px">
+    <label>Prix</label>
+    <input type="number" formControlName="prix" name="prix" class="form-control col-md-3" [(ngModel)]="guntoModify.prix">
+    <div *ngIf = "prix.touched && prix.invalid"><div class="invalid-feedback" class="text-danger" style="font-size: 12px">Ce champ est obligatoire!</div></div>
+    <div *ngIf = "prix.value < 0" class="text-warning" style="font-size: 12px">Prix doit être positive</div>
+  </div>
+  <div class="form-group" style="width: 900px">
+    <label>Image</label>
+    <input type="text" accept="image/png, image/jpeg" formControlName="img" name="img" class="form-control col-md-3" [(ngModel)]="guntoModify.img" >
+    <div class="alert alert-danger" *ngIf="img.invalid && img.touched">image obligatoire</div>
+
+  </div>
+  <div class="form-group" style="width: 900px">
+    <label>Clip</label>
+    <input type="number" formControlName="clip" name="clip" class="form-control col-md-3" [(ngModel)]="guntoModify.clip">
+    <div *ngIf = "clip.touched && clip.invalid"><div class="invalid-feedback" class="text-danger" style="font-size: 12px">Ce champ est obligatoire!</div></div>
+    <div *ngIf = "clip.value < 0" class="text-warning" style="font-size: 12px">Clip doit être positive</div>
+  </div>
+  <div class="form-group" style="width: 900px">
+    <label>Country</label>
+    <input type="text" formControlName="country" name="country" class="form-control col-md-3" [(ngModel)]="guntoModify.country">
+    <div class="alert alert-danger" *ngIf="country.touched && country.invalid">country obligatoire</div>
+  </div>
+  <div class="form-group"style="width: 900px">
+    <label>Description</label>
+    <input type="text" formControlName="description" name="description" class="form-control col-md-3" [(ngModel)]="guntoModify.Description">
+    <div class="alert alert-danger" *ngIf="description.touched && description.invalid">Description obligatoire</div>
+  </div>
+
+  <button [disabled]="productform.invalid" class="btn btn-warning" type="submit" >Modify</button>
+
+
+
+</form>
+  </div>
+      <div class="col-md-8">
+        <img class=" img-fluid" src="../assets/images/gunmod.jpg">
+      </div>
+
+    </div>
+  </div></div>
+<app-footer></app-footer>
