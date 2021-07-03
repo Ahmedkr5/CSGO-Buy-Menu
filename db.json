@@ -10,15 +10,6 @@
       "Description": "The M4 Carbine is a 5.56×45mm NATO, air-cooled, gas-operated,[b] direct impingement, magazine-fed, select fire carbine. It has a 14.5 in (370 mm) barrel and a telescoping stock. It is essentially a lighter and shorter variant of the M16A2 assault rifle."
     },
     {
-      "id": 1,
-      "name": "AK-47",
-      "prix": 2700,
-      "img": "../assets/images/AK.jpg",
-      "clip": 30,
-      "country": "Russia",
-      "Description": "The AK-47, officially known as the Avtomat Kalashnikova (Russian: Автома́т Кала́шникова, lit. 'Kalashnikov's assault rifle'; also known as the Kalashnikov or just AK), is a gas-operated a year after the assault on WWII."
-    },
-    {
       "id": 2,
       "name": "GIAT Famas",
       "prix": 2100,

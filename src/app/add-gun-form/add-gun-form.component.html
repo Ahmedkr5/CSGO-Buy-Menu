@@ -37,7 +37,7 @@
   Description: <input name = "Description" type = "text"  [(ngModel)]="gun.Description" #dsc = "ngModel" required/>
   <div *ngIf = "dsc.touched && dsc.invalid" class="text-danger"style="font-size: 12px">Ce champ est obligatoire!</div>
   <br><br>
-  <button class="btn-success" style="font-size:20px;"[disabled] = "addgunform.invalid" (click) = "save()" [routerLink]="'/'">Save</button>
+  <button class="btn-success" style="font-size:20px;"[disabled] = "addgunform.invalid" (click) = "save()" routerLink="/home">Save</button>
 </form>
     </div>
     <div class="col-md-8">
